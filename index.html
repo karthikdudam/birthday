@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday, dear Bangaram💙</title>>
+  <style>
+    /* ====== Easy Theme Tweaks ====== */
+    :root{
+      --bg1:#0e1026;          /* background gradient start */
+      --bg2:#1e2a6d;          /* background gradient end */
+      --accent:#ffb703;       /* gold accent */
+      --accent-2:#7dd3fc;     /* soft blue */
+      --heart:#ff4d6d;        /* heart color */
+      --card:#0f172a90;       /* glass card */
+      --text:#e6ecff;         /* primary text */
+      --muted:#c8d3ffcc;     /* muted text */
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    /* ====== Reset ====== */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 800px at 80% -20%, #ffffff22, transparent 60%),
+                  linear-gradient(135deg,var(--bg1),var(--bg2));
+      overflow-x:hidden;
+    }
+
+    /* ====== Stars (subtle) ====== */
+    .stars{
+      position:fixed; inset:0; pointer-events:none; opacity:.3;
+      background-image: radial-gradient(#fff 1px, transparent 1px);
+      background-size: 18px 18px;
+      filter: blur(.6px);
+      animation: twinkle 10s linear infinite;
+    }
+    @keyframes twinkle{0%{opacity:.25}50%{opacity:.4}100%{opacity:.25}}
+
+    /* ====== Floating Balloons ====== */
+    .balloons{ position:fixed; inset:0; pointer-events:none; overflow:hidden; }
+    .balloon{
+      position:absolute; bottom:-140px; width:70px; height:90px; border-radius:50% 50% 45% 55%/55% 55% 45% 45%;
+      box-shadow: inset -8px -12px 24px #0000002a; opacity:.9;
+      animation: floatUp var(--dur,12s) linear infinite;
+    }
+    .balloon::after{ /* string */
+      content:""; position:absolute; left:50%; transform:translateX(-50%);
+      bottom:-70px; width:2px; height:70px; background:#ffffff66;
+    }
+    .b1{ left:6%; background:#ff7aa2; --dur:14s; animation-delay: -2s}
+    .b2{ left:20%; background:#7dd3fc; --dur:12s; animation-delay: -6s}
+    .b3{ left:42%; background:#a7f3d0; --dur:15s; animation-delay: -8s}
+    .b4{ left:64%; background:#fde68a; --dur:13s; animation-delay: -4s}
+    .b5{ left:82%; background:#c4b5fd; --dur:16s; animation-delay: -10s}
+    @keyframes floatUp {
+      0% { transform: translateY(0) translateX(0) rotate(-2deg); opacity:.9 }
+      50%{ transform: translateY(-50vh) translateX(20px) rotate(2deg); opacity:.95 }
+      100%{ transform: translateY(-110vh) translateX(-10px) rotate(-2deg); opacity:0 }
+    }
+
+    /* ====== Page Layout ====== */
+    .wrap{ min-height:100svh; display:grid; place-items:center; padding:clamp(16px,2vw,32px); }
+
+    .card{
+      width:min(920px, 92vw);
+      background: linear-gradient(180deg, #ffffff0f, #ffffff06);
+      backdrop-filter: blur(10px);
+      border:1px solid #ffffff20;
+      border-radius: 28px; box-shadow: var(--shadow);
+      overflow:hidden; position:relative;
+    }
+
+    .ribbon{
+      position:absolute; inset:0 auto auto 0; background:conic-gradient(from 180deg at 50% 50%, var(--accent), #ff5d8f, var(--accent-2), var(--accent));
+      color:#0b1020; font-weight:700; padding:.5rem 1rem; border-bottom-right-radius: 16px; letter-spacing:.5px;
+      text-shadow: none; filter: drop-shadow(0 4px 8px rgba(0,0,0,.25));
+    }
+
+    header{
+      padding:48px 40px 10px;
+      display:flex; flex-wrap:wrap; gap:18px; align-items:center; justify-content:space-between;
+    }
+    .title{
+      line-height:1.1; letter-spacing:.2px;
+    }
+    .title h1{
+      margin:0; font-size: clamp(28px, 6vw, 56px);
+      background: linear-gradient(90deg, #fff, #e5eeff, #c7d2fe);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      text-shadow: 0 6px 30px #1f2a6b66;
+    }
+    .title p{ margin:.5rem 0 0; color:var(--muted); font-size:clamp(14px, 2.2vw, 18px) }
+
+    .heart{ font-size: clamp(24px, 5vw, 34px); color:var(--heart); filter: drop-shadow(0 6px 14px #ff4d6d55);}
+
+    .hero{
+      padding: 0 40px 32px; display:grid; grid-template-columns: 1fr 1fr; gap:24px; align-items:center;
+    }
+    .photo{ aspect-ratio:4/3; width:100%; border-radius: 22px; overflow:hidden; border: 1px solid #ffffff22; box-shadow: var(--shadow); background:#0b132b; position:relative; }
+    .photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .photo .hint{ position:absolute; inset:auto 12px 12px auto; background:#00000066; color:#fff; padding:6px 10px; border-radius:12px; font-size:12px }
+
+    .msg{
+      background: linear-gradient(180deg,#0b143340,#0b143320);
+      border:1px solid #ffffff1c; border-radius:22px; padding:22px; box-shadow: inset 0 0 0 1px #ffffff0b;
+    }
+    .msg h2{ margin:0 0 10px; font-size: clamp(20px, 3.2vw, 28px); }
+    .msg p{ margin:.6rem 0; color:var(--muted); font-size: clamp(14px, 2.2vw, 18px); }
+    .sig{ margin-top:12px; font-weight:600; color:#fff }
+
+    .grid{
+      display:grid; grid-template-columns: repeat(3,1fr); gap:14px; padding:0 40px 40px;
+    }
+    .memory{
+      aspect-ratio:1; border-radius:18px; overflow:hidden; border:1px dashed #ffffff33; display:grid; place-items:center; color:#ffffffaa; font-size:14px;
+      background: linear-gradient(145deg,#111735,#0b0f26);
+    }
+    /* ====== Toggle Letter (CSS only) ====== */
+    .bar{ display:flex; gap:12px; align-items:center; justify-content:center; padding:18px 24px; background:#060a1a99; border-top:1px solid #ffffff1a }
+    .bar label{ cursor:pointer; font-weight:600; letter-spacing:.3px }
+    #open{ position:absolute; left:-9999px }
+    .letter{
+      max-height:0; overflow:hidden; transition:max-height .8s ease; background: #0b143340; border-top:1px solid #ffffff1a;
+    }
+    #open:checked ~ .letter{ max-height: 600px; }
+    .letter .inner{ padding:22px 40px 36px; color:var(--muted); font-size:clamp(14px, 2.1vw, 18px); }
+    .letter .inner p{ margin:.7rem 0 }
+
+    /* ====== Footer ====== */
+    footer{ padding:14px 20px 26px; text-align:center; color:#a5b4fc; font-size:12px }
+
+    /* ====== Print Version ====== */
+    @media print{
+      body{ background:#fff; }
+      .stars,.balloons{ display:none }
+      .card{ box-shadow:none; border:1px solid #ddd }
+      .photo .hint{ display:none }
+      .bar, .letter{ background:#fff }
+      .memory{ border-color:#bbb; color:#333 }
+    }
+
+    /* ====== Responsive ====== */
+    @media (max-width: 860px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 540px){
+      header{ padding:32px 22px 6px }
+      .hero{ padding: 0 22px 22px }
+      .grid{ padding: 0 22px 28px; grid-template-columns: 1fr; }
+      .letter .inner{ padding:18px 22px 28px }
+    }
+  </style>
+  <!-- Optional: Nice script font for names/headlines -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background sparkle + balloons -->
+  <div class="stars" aria-hidden="true"></div>
+  <div class="balloons" aria-hidden="true">
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+    <div class="balloon b5"></div>
+  </div>
+  <main class="wrap">
+    <section class="card">
+      <span class="ribbon">Happy Birthday!</span>
+
+      <header>
+        <div class="title">
+          <h1>Happy Birthday, My Dear</h1>
+          <p>To the love of my life — may your year be filled with joy, health, and endless wins. ✨</p>
+        </div>
+        <div class="heart" aria-label="love">❤</div>
+      </header>
+
+      <div class="hero">
+        <figure class="photo">
+          <!-- Replace the src with your favourite photo -->
+          <!-- <img src="WhatsApp Image 2025-09-02 at 1.11.34 PM.jpeg" alt="Your favourite memory together" /> -->
+           <a href="https://ibb.co/6732XCXZ"><img src="https://i.ibb.co/5gNdKHK9/Whats-App-Image-2025-09-02-at-14-45-50-dc3a17de.jpg" alt="Whats-App-Image-2025-09-02-at-14-45-50-dc3a17de" border="0"></a>
+          <!-- <figcaption class="hint">Tip: replace image URL</figcaption> -->
+        </figure>
+
+        <div class="msg">
+          <h2 style="font-family:'Great Vibes', cursive; font-size:clamp(28px,5.4vw,40px); color:#fff;">Dear <span contenteditable="true">My dear Bangaram💙</span>,</h2>
+          <p>
+            Every day with you feels like a celebration, but today the world joins me in
+            cheering for the amazing man you are. You make ordinary moments magical and
+            difficult days easier. Thank you for your warmth, strength, and endless love.
+          </p>
+          <p>
+            May this year bring you new adventures, deep peace, and everything your heart
+            has quietly wished for.
+          </p>
+          <p class="sig">Forever yours, <span contenteditable="true">Varsha(Ni Bangaram💙)</span> ♡</p>
+        </div>
+      </div>
+
+      <div class="grid" aria-label="memory gallery">
+        <div class="memory">
+          <!-- <img src="WhatsApp Image 2025-09-02 at 1.11.38 PM.jpeg" alt="img-1" width="200px" height="200px"> -->
+      <a href="https://ibb.co/yByPdLNJ"><img src="https://i.ibb.co/yByPdLNJ/Whats-App-Image-2025-09-02-at-16-27-11-2e7effc9.jpg" alt="Whats-App-Image-2025-09-02-at-16-27-11-2e7effc9" border="0"></a>
+        </div>
+        <div class="memory">
+          <!-- <img src="WhatsApp Image 2025-09-02 at 1.11.44 PM.jpeg" alt="img-1" width="250px" height="200px"> -->
+           <a href="https://ibb.co/GQDZ95HC"><img src="https://i.ibb.co/GQDZ95HC/Whats-App-Image-2025-09-02-at-16-20-56-e2e78554.jpg" alt="Whats-App-Image-2025-09-02-at-16-20-56-e2e78554" border="0"></a>
+        </div>
+        <div class="memory">
+          <!-- <img src="WhatsApp Image 2025-09-02 at 1.11.43 PM.jpeg" alt="img-1" width="250px" height="200px"> -->
+           <a href="https://ibb.co/qYSX4LzF"><img src="https://i.ibb.co/qYSX4LzF/Whats-App-Image-2025-09-02-at-16-09-10-35ca8ebb.jpg" alt="Whats-App-Image-2025-09-02-at-16-09-10-35ca8ebb" border="0"></a>
+        </div>
+      </div>
+
+      <div class="bar">
+        <input type="checkbox" id="open" />
+        <label for="open">Miss you Bangaram💙</label>
+      </div>
+      <span>Dear Naveen, nuvvu naku kavali,
+        nimishaniki okasari "I love you" chappadaniki kadhu "life long" aa mata medha nilabataniki, naku nv entha etsam telusa, bagga ante bagga, naku nv kavali, naku anandham vachinappudu "hug" chesukoni "I love you cheppadaniki kadhu", badhalo unnappudu thala nimiri "I'm with you" ani cheppadaniki,
+        naku nv kavali, birthday roji andarikante mundhunna "wish" cheyyadaniki kadhu, na janma nikosame ani vandella jivitham kalisi nadavadaniki,
+        nauvvu kavali naku, giftulu echipuchukovadaniki kadhu na jivithanni nike "gift" ga evvadaniki.
+      </span><br>
+      <h3>Trust Me Bangaram💙</h3>
+      <span>Naku kopam vaste na matalu maruthayi emo kani...!</span><br>
+      <span>Ni paina unna prema eppatiki maaradhu Bangaram💙</span><br>
+      <span>Kopam ayina prema ayina....!</span><br>
+      <span>Na anukunna nipai mathrame chupinchagalanu</span>
+      <div class="letter" aria-hidden="true">
+        <div class="inner">
+          <p>
+            I’m endlessly grateful for your patience, your silly jokes, and the way you
+            make our house feel like home. I love the dreams we’ve built and the ones we
+            still whisper about at night. Here’s to more road trips, late-night talks,
+            cozy breakfasts, and all the tiny moments that become our favorite memories.
+          </p>
+          <p>
+            Keep smiling, my love. The world looks better on you.
+          </p>
+          <p class="sig">With all my heart, <span contenteditable="true">{Your Name}</span></p>
+        </div>
+      </div>
+
+      <footer>
+        Tip: Change colors in <code>:root</code>, replace the photo URL, and click names to edit. Print-friendly too! 🎉
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
